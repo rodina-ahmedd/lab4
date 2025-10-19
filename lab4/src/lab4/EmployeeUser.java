@@ -3,6 +3,7 @@ package lab4;
 
 
 public class EmployeeUser {
+
     
     private String employeeId;
     private String Name;
@@ -28,5 +29,4 @@ public class EmployeeUser {
         return employeeId ;
     }
 }
-
 
