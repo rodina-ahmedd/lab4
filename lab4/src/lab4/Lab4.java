@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-public class Lab4 {
+public class Lab4{
 
 
     public static void main(String[] args) {
