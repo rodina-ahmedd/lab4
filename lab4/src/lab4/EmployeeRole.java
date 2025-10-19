@@ -10,13 +10,13 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class EmployeeRole extends Roles {
-    private ProductDataBase productsDatabase;
+    private ProductDatabase productsDatabase;
     private CustomerProductDatabase customerProductDatabase;
 
     private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public EmployeeRole() {
-        productsDatabase = new ProductDataBase("Products.txt");
+        productsDatabase = new ProductDatabase("Products.txt");
         productsDatabase.readFromFile();
 
         customerProductDatabase = new CustomerProductDatabase("CustomerProducts.txt");
