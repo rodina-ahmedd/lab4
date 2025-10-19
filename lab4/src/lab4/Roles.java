@@ -6,5 +6,5 @@ package lab4;
 
 
 public abstract class Roles {
-    
+    public abstract void logout(); 
 }
