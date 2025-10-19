@@ -16,11 +16,10 @@ public class CustomerProduct extends Record {
     
     private final static DateTimeFormatter date = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    public CustomerProduct(String customerSSN, String productId, LocalDate purchaseDate) {
+    public CustomerProduct(String customerSSN, String productId, LocalDate purchaseDate){
         this.customerSSN = customerSSN;
         this.productId = productId;
-        this.purchaseDate = purchaseDate;
-        
+        this.purchaseDate = purchaseDate; 
     }
 
     public String getCustomerSSN() {
@@ -45,7 +44,7 @@ public class CustomerProduct extends Record {
     
     @Override
     public String lineRepresentation(){
-        String formattedDate = purchaseDate.format(date);
+        String formattedDate=purchaseDate.format(date);
         return customerSSN + "," + productId + "," + formattedDate + "," + paid ; 
     }
     
@@ -56,8 +55,5 @@ public class CustomerProduct extends Record {
        return customerSSN + "," + productId + "," + formattedDate;    
     }
 
-    String getProductID() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
     
 }
