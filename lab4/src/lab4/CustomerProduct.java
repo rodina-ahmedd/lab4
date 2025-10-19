@@ -7,43 +7,57 @@ package lab4;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class CustomerProduct {
-    private String  customerSSN;
-    private String productID;
+public class CustomerProduct extends Record {
+    
+    private String customerSSN;
+    private String productId;
     private LocalDate purchaseDate;
     private boolean paid;
+    
+    private final static DateTimeFormatter date = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    public CustomerProduct(String customerSSN, String productID, LocalDate purchaseDate) {
+    public CustomerProduct(String customerSSN, String productId, LocalDate purchaseDate) {
         this.customerSSN = customerSSN;
-        this.productID = productID;
+        this.productId = productId;
         this.purchaseDate = purchaseDate;
-        this.paid=false;
+        
     }
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public String getCustomerSSN() {
         return customerSSN;
     }
 
-    public String getProductID() {
-        return productID;
+    public String getProductId() {
+        return productId;
     }
 
     public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
-    public String lineRepresentation(){
-         return customerSSN + "," + productID + "," + purchaseDate.format(formatter) + "," + paid;
-    }
-    public boolean isPaid(){
+
+    public boolean isPaid() {
         return paid;
     }
 
     public void setPaid(boolean paid) {
         this.paid = paid;
     }
+    
+    @Override
+    public String lineRepresentation(){
+        String formattedDate = purchaseDate.format(date);
+        return customerSSN + "," + productId + "," + formattedDate + "," + paid ; 
+    }
+    
+    @Override
+    
     public String getSearchKey(){
-        return customerSSN + "," + productID + "," + purchaseDate.format(formatter);
+       String formattedDate = purchaseDate.format(date);
+       return customerSSN + "," + productId + "," + formattedDate;    
     }
 
+    String getProductID() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+    
 }
