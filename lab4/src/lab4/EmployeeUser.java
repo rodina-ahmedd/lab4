@@ -5,6 +5,6 @@
 package lab4;
 
 
-public class EmployeUser {
+public class EmployeeUser {
     
 }
