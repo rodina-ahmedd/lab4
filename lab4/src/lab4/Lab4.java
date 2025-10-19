@@ -11,7 +11,7 @@ public class Lab4{
 
     public static void main(String[] args) {
         
-        Scanner sc=new Scanner(System.in);
+        Scanner sc =new Scanner(System.in);
         AdminRole adminRole=new AdminRole();
         EmployeeRole employeeRole=new EmployeeRole();
         DateTimeFormatter fmt=DateTimeFormatter.ofPattern("dd-MM-yyyy");
