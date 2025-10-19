@@ -2,7 +2,7 @@
 package lab4;
 
 
-public class EmployeeUser {
+public class EmployeeUser extends Record{
 
     
     private String employeeId;
